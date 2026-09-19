@@ -1,0 +1,100 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#f8f9fa" />
+    <meta name="description" content="RoboAgent execution lab: inspect robot reasoning, policy actions, and safety checks in a hardware-free simulation replay." />
+    <title>RoboAgent / Execution Lab</title>
+    <script type="module" crossorigin src="./assets/index-CcOWL46v.js"></script>
+    <link rel="modulepreload" crossorigin href="./assets/three-DR_aB1J7.js">
+    <link rel="stylesheet" crossorigin href="./assets/index-CRMUX5cZ.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <a class="brand" href="./" aria-label="RoboAgent home">
+        <span class="brand-symbol"><i data-lucide="workflow"></i></span>
+        <h1>RoboAgent</h1>
+        <span class="brand-category">Execution lab</span>
+      </a>
+      <nav class="header-links" aria-label="Project links">
+        <span class="simulation-label"><span class="status-dot"></span>Simulation replay</span>
+        <a href="https://github.com/YuhuaJiang2002/RoboAgent-demo" target="_blank" rel="noopener noreferrer" title="Open demo repository"><i data-lucide="github"></i><span>Repository</span><i data-lucide="arrow-up-right" class="small-icon"></i></a>
+      </nav>
+    </header>
+
+    <div class="workspace-heading">
+      <div><p class="eyebrow">WORKSPACE / 01</p><h2>Virtual manipulator <span>2 DOF</span></h2></div>
+      <div class="run-summary"><span class="eyebrow">EPISODE STATUS</span><span id="episode-status" class="episode-status" role="status">Loading</span></div>
+    </div>
+
+    <main class="workspace">
+      <aside class="setup-panel" aria-label="Task configuration">
+        <section class="setup-section task-section">
+          <div class="section-title"><span class="section-number">01</span><h3>Task setup</h3><i data-lucide="sliders-horizontal"></i></div>
+          <label class="field-label" for="episode">Scenario</label>
+          <select id="episode" disabled><option>Loading episodes</option></select>
+          <div class="task-instruction"><i data-lucide="corner-down-right"></i><p id="task-instruction">Loading core trace</p></div>
+          <div class="property-row"><span>Reasoner</span><strong>Feedback-based</strong></div>
+          <div class="property-row"><span>Policy</span><strong id="policy-name">Deterministic</strong></div>
+          <div class="property-row"><span>Execution horizon</span><strong>1 action</strong></div>
+        </section>
+        <section class="setup-section">
+          <div class="section-title"><span class="section-number">02</span><h3>Joint state</h3><i data-lucide="activity"></i></div>
+          <div class="joint"><div class="joint-heading"><label>Joint 01</label><output id="joint-0">+0.000 <small>rad</small></output></div><div class="joint-track"><span id="joint-meter-0"></span><b></b></div><div class="joint-limits"><span>-1.00</span><span>+1.00</span></div></div>
+          <div class="joint"><div class="joint-heading"><label>Joint 02</label><output id="joint-1">+0.000 <small>rad</small></output></div><div class="joint-track"><span id="joint-meter-1"></span><b></b></div><div class="joint-limits"><span>-1.00</span><span>+1.00</span></div></div>
+          <div class="target-row"><i data-lucide="target"></i><span>Target</span><code id="target-joints">[0.650, -0.450]</code></div>
+        </section>
+        <section class="setup-section safety-section">
+          <div class="section-title"><span class="section-number">03</span><h3>Execution guard</h3><i data-lucide="shield-check"></i></div>
+          <div class="guard-row"><span><i data-lucide="check"></i>Finite values</span><code>required</code></div>
+          <div class="guard-row" id="bounds-guard"><span><i data-lucide="check"></i>Joint bounds</span><code>&plusmn;1.00 rad</code></div>
+          <div class="guard-row"><span><i data-lucide="check"></i>Fresh observation</span><code>&le;10 s</code></div>
+          <label class="path-toggle"><input id="show-path" type="checkbox" checked /><span>Recorded path</span></label>
+        </section>
+        <div class="backend-label"><span class="status-dot"></span><span>IN-MEMORY BACKEND</span></div>
+      </aside>
+
+      <section class="canvas-panel" aria-label="Robot simulation replay">
+        <div class="scene-toolbar"><span><i data-lucide="box"></i>SCENE / VIRTUAL ARM</span><div class="view-controls" role="group" aria-label="Camera view"><button id="orbit-view" class="view-button selected" title="Orbit view" aria-label="Orbit view" aria-pressed="true"><i data-lucide="orbit"></i></button><button id="top-view" class="view-button" title="Top view" aria-label="Top view" aria-pressed="false"><i data-lucide="scan"></i></button><button id="reset-view" class="view-button" title="Reset camera" aria-label="Reset camera"><i data-lucide="focus"></i></button></div></div>
+        <select id="episode-mobile" aria-label="Scenario" class="mobile-scenario" disabled><option>Loading episodes</option></select>
+        <div class="pipeline" aria-label="Execution pipeline">
+          <div data-phase="observe"><i data-lucide="scan"></i><span>Observe</span></div>
+          <div data-phase="reason"><i data-lucide="git-branch"></i><span>Reason</span></div>
+          <div data-phase="predict"><i data-lucide="layers"></i><span>Predict</span></div>
+          <div data-phase="validate"><i data-lucide="shield-check"></i><span>Validate</span></div>
+          <div data-phase="execute"><i data-lucide="box"></i><span>Execute</span></div>
+        </div>
+        <div id="scene" class="scene-container">
+          <div class="scene-coordinate"><span class="axis-mark">XYZ</span>SIM_ROBOT_BASE</div>
+          <div class="scene-legend"><span class="legend-line"></span>Recorded path<span class="legend-target"></span>Target</div>
+          <div id="load-error" class="error-message" role="alert" hidden></div>
+        </div>
+        <div class="transport">
+          <button id="play" class="primary-button" disabled><span id="play-icon"><i data-lucide="play"></i></span><span id="play-label">Run episode</span></button>
+          <button id="next" class="icon-button" disabled title="Next event" aria-label="Next event"><i data-lucide="skip-forward"></i></button>
+          <button id="reset" class="icon-button" disabled title="Reset episode" aria-label="Reset episode"><i data-lucide="rotate-ccw"></i></button>
+          <div class="transport-spacer"></div>
+          <label class="speed-label" for="speed">Playback</label><select id="speed" aria-label="Playback speed"><option value="0.5">0.5x</option><option value="1" selected>1x</option><option value="2">2x</option></select>
+        </div>
+        <div class="timeline">
+          <div class="timeline-heading"><span>EVENT TIMELINE</span><code id="event-count">00 / 00</code></div>
+          <input id="scrubber" type="range" min="0" max="1" value="0" step="1" aria-label="Replay event" disabled />
+          <div class="timeline-labels"><span>Observation</span><span id="timeline-end">Outcome</span></div>
+        </div>
+      </section>
+
+      <aside class="inspector-panel" aria-label="Trace inspector">
+        <div class="inspector-heading"><div><p class="eyebrow">CORE TRACE</p><h3>Step inspector</h3></div><button id="download" class="icon-button" disabled title="Download trace JSON" aria-label="Download trace JSON"><i data-lucide="download"></i></button></div>
+        <div class="step-summary"><div><span>Step</span><strong id="step-number">00</strong></div><div><span>Dispatches</span><strong id="dispatch-count">00</strong></div><div><span>Gate</span><strong id="gate-value" class="gate-value">Idle</strong></div></div>
+        <div class="inspector-tabs" role="tablist" aria-label="Trace data"><button role="tab" aria-selected="false" aria-controls="inspector-code" id="decision-tab" data-tab="decision" tabindex="-1">Decision</button><button role="tab" aria-selected="false" aria-controls="inspector-code" id="action-tab" data-tab="action" tabindex="-1">Action</button><button role="tab" aria-selected="true" aria-controls="inspector-code" id="observation-tab" data-tab="observation">Observation</button></div>
+        <div class="code-heading"><span><i data-lucide="braces"></i><span id="payload-label">observation.json</span></span><button id="copy" class="icon-button small-button" disabled title="Copy inspected JSON" aria-label="Copy inspected JSON"><i data-lucide="copy"></i></button></div>
+        <pre id="inspector-code" role="tabpanel" aria-labelledby="observation-tab" tabindex="0">{}</pre>
+        <div class="trace-outcome" id="trace-outcome"><i data-lucide="circle-dot"></i><div><strong id="outcome-title">Awaiting playback</strong><p id="outcome-detail">No actions dispatched</p></div></div>
+        <a class="contract-link" href="https://github.com/YuhuaJiang2002/RoboAgent-demo#trace-format" target="_blank" rel="noopener noreferrer">Trace format &amp; provenance<i data-lucide="arrow-up-right"></i></a>
+      </aside>
+    </main>
+    <footer class="site-footer"><span><i data-lucide="shield-check"></i>Physical commands <strong>0</strong><span class="footer-divider"></span>Model calls <strong>0</strong></span><span>ROBOAGENT CORE<span class="footer-divider"></span><span id="trace-date">SIMULATION TRACE</span></span></footer>
+    <div id="toast" class="toast" role="status" hidden></div>
+  </body>
+</html>

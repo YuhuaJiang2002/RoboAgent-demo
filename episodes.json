@@ -1,0 +1,1108 @@
+{
+  "schema_version": "roboagent.demo.v1",
+  "generated_at": "2026-09-19T06:37:47.725717+00:00",
+  "source": "roboagent.core.run_task",
+  "mode": "recorded_in_memory_simulation",
+  "physical_robot_commands": 0,
+  "model_service_calls": 0,
+  "episodes": [
+    {
+      "id": "inspection",
+      "title": "Inspection pose",
+      "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+      "initial": [
+        -0.35,
+        0.55
+      ],
+      "target": [
+        0.65,
+        -0.45
+      ],
+      "action_space": {
+        "name": "sim_joint_position",
+        "axes": [
+          "joint_1",
+          "joint_2"
+        ],
+        "units": [
+          "rad",
+          "rad"
+        ],
+        "lower": [
+          -1.0,
+          -1.0
+        ],
+        "upper": [
+          1.0,
+          1.0
+        ],
+        "frame": "sim_robot_base"
+      },
+      "candidate": null,
+      "trace": {
+        "status": "completed",
+        "steps": [
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  -0.35,
+                  0.55
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.7251148
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.24999999999999997,
+                  0.45000000000000007
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.24999999999999997,
+                  0.45000000000000007
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  -0.24999999999999997,
+                  0.45000000000000007
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725153
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.14999999999999997,
+                  0.3500000000000001
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.14999999999999997,
+                  0.3500000000000001
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  -0.14999999999999997,
+                  0.3500000000000001
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725174
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.04999999999999996,
+                  0.2500000000000001
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.04999999999999996,
+                  0.2500000000000001
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  -0.04999999999999996,
+                  0.2500000000000001
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.7251892
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.050000000000000044,
+                  0.1500000000000001
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.050000000000000044,
+                  0.1500000000000001
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.050000000000000044,
+                  0.1500000000000001
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725201
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.15000000000000005,
+                  0.0500000000000001
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.15000000000000005,
+                  0.0500000000000001
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.15000000000000005,
+                  0.0500000000000001
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725214
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.25000000000000006,
+                  -0.049999999999999906
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.25000000000000006,
+                  -0.049999999999999906
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.25000000000000006,
+                  -0.049999999999999906
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725226
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.3500000000000001,
+                  -0.1499999999999999
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.3500000000000001,
+                  -0.1499999999999999
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.3500000000000001,
+                  -0.1499999999999999
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725238
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.45000000000000007,
+                  -0.24999999999999992
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.45000000000000007,
+                  -0.24999999999999992
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.45000000000000007,
+                  -0.24999999999999992
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725249
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.55,
+                  -0.3499999999999999
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.55,
+                  -0.3499999999999999
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.55,
+                  -0.3499999999999999
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725261
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.65,
+                  -0.44999999999999996
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.65,
+                  -0.44999999999999996
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.65,
+                  -0.44999999999999996
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.7252731
+            },
+            "decision": {
+              "policy": null,
+              "instruction": "",
+              "done": true,
+              "reason": "Observed the target joint positions in the in-memory demo"
+            },
+            "proposed": null,
+            "attempted": null,
+            "feedback": null,
+            "error": ""
+          }
+        ],
+        "message": "Observed the target joint positions in the in-memory demo"
+      }
+    },
+    {
+      "id": "handoff",
+      "title": "Transfer pose",
+      "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+      "initial": [
+        0.55,
+        -0.4
+      ],
+      "target": [
+        -0.55,
+        0.7
+      ],
+      "action_space": {
+        "name": "sim_joint_position",
+        "axes": [
+          "joint_1",
+          "joint_2"
+        ],
+        "units": [
+          "rad",
+          "rad"
+        ],
+        "lower": [
+          -1.0,
+          -1.0
+        ],
+        "upper": [
+          1.0,
+          1.0
+        ],
+        "frame": "sim_robot_base"
+      },
+      "candidate": null,
+      "trace": {
+        "status": "completed",
+        "steps": [
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.55,
+                  -0.4
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725353
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.45000000000000007,
+                  -0.30000000000000004
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.45000000000000007,
+                  -0.30000000000000004
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.45000000000000007,
+                  -0.30000000000000004
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725366
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.3500000000000001,
+                  -0.20000000000000004
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.3500000000000001,
+                  -0.20000000000000004
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.3500000000000001,
+                  -0.20000000000000004
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725378
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.2500000000000001,
+                  -0.10000000000000003
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.2500000000000001,
+                  -0.10000000000000003
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.2500000000000001,
+                  -0.10000000000000003
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725389
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.1500000000000001,
+                  -2.7755575615628914e-17
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.1500000000000001,
+                  -2.7755575615628914e-17
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.1500000000000001,
+                  -2.7755575615628914e-17
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.7254
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.0500000000000001,
+                  0.09999999999999998
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  0.0500000000000001,
+                  0.09999999999999998
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.0500000000000001,
+                  0.09999999999999998
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.7254112
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.049999999999999906,
+                  0.19999999999999998
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.049999999999999906,
+                  0.19999999999999998
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  -0.049999999999999906,
+                  0.19999999999999998
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725423
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.1499999999999999,
+                  0.3
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.1499999999999999,
+                  0.3
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  -0.1499999999999999,
+                  0.3
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725434
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.24999999999999992,
+                  0.4
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.24999999999999992,
+                  0.4
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  -0.24999999999999992,
+                  0.4
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725447
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.3499999999999999,
+                  0.5
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.3499999999999999,
+                  0.5
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  -0.3499999999999999,
+                  0.5
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.7254589
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.44999999999999996,
+                  0.6
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.44999999999999996,
+                  0.6
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  -0.44999999999999996,
+                  0.6
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.72547
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [-0.55, 0.7] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.5499999999999999,
+                  0.7
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "attempted": {
+              "action_space": "sim_joint_position",
+              "actions": [
+                [
+                  -0.5499999999999999,
+                  0.7
+                ]
+              ],
+              "timestep_s": 0.1
+            },
+            "feedback": {
+              "success": true,
+              "message": "Updated in-memory joint state; no hardware was used"
+            },
+            "error": ""
+          },
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  -0.5499999999999999,
+                  0.7
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725481
+            },
+            "decision": {
+              "policy": null,
+              "instruction": "",
+              "done": true,
+              "reason": "Observed the target joint positions in the in-memory demo"
+            },
+            "proposed": null,
+            "attempted": null,
+            "feedback": null,
+            "error": ""
+          }
+        ],
+        "message": "Observed the target joint positions in the in-memory demo"
+      }
+    },
+    {
+      "id": "guard",
+      "title": "Out-of-bounds action",
+      "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+      "initial": [
+        0.0,
+        0.0
+      ],
+      "target": [
+        0.65,
+        -0.45
+      ],
+      "action_space": {
+        "name": "sim_joint_position",
+        "axes": [
+          "joint_1",
+          "joint_2"
+        ],
+        "units": [
+          "rad",
+          "rad"
+        ],
+        "lower": [
+          -1.0,
+          -1.0
+        ],
+        "upper": [
+          1.0,
+          1.0
+        ],
+        "frame": "sim_robot_base"
+      },
+      "candidate": {
+        "action_space": "sim_joint_position",
+        "actions": [
+          [
+            1.25,
+            0.15
+          ]
+        ],
+        "timestep_s": 0.1
+      },
+      "trace": {
+        "status": "failed",
+        "steps": [
+          {
+            "observation": {
+              "state": {
+                "joint_positions": [
+                  0.0,
+                  0.0
+                ]
+              },
+              "images": {},
+              "timestamp": 1789799867.725693
+            },
+            "decision": {
+              "policy": "joint_policy",
+              "instruction": "Move the virtual arm to joint positions [0.65, -0.45] radians.",
+              "done": false,
+              "reason": ""
+            },
+            "proposed": null,
+            "attempted": null,
+            "feedback": null,
+            "error": "ValueError: Action axis 'joint_1' is nonfinite or outside [-1.0, 1.0]"
+          }
+        ],
+        "message": "ValueError: Action axis 'joint_1' is nonfinite or outside [-1.0, 1.0]"
+      }
+    }
+  ]
+}
